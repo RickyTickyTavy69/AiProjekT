@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import {NavLinkButton} from "../index.ts";
 import {ThemeDecorator} from "../../../config/storybook/ThemeDecorator/ThemeDecorator.tsx";
+import {RouterDecorator} from "../../../config/storybook/ThemeDecorator/RouterDecorator.tsx";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -25,15 +26,16 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const NavLinkButton_Light: Story = {
     args: {
-        title: "NavLink Light",
-        to: "/"
+        to: "/",
+        children: "NavLink Light"
     },
+    decorators: [RouterDecorator()]
 };
 
 export const NavLinkButton_Dark: Story = {
     args: {
-        title: "NavLink Dark",
-        to: "/"
+        to: "/",
+        children: "NavLink Dark"
     },
-    decorators: [ThemeDecorator("Dark")]
+    decorators: [ThemeDecorator("Dark"), RouterDecorator()]
 };
