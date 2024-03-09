@@ -17,8 +17,8 @@ const SelectLanguage = (): JSX.Element => {
   return (
         <>
             <div>
-                <select className={`text-black`} onChange={changeLanguage}>
-                    {languages.map((lang, idx) => <option key={idx} selected={choosenLanguage === lang} value={lang}>{ t(lang) }</option>)}
+                <select defaultValue={choosenLanguage ?? "en-US"} className={`text-black`} onChange={changeLanguage}>
+                    {languages.map((lang, idx) => <option key={idx} value={lang}>{ t(lang) }</option>)}
                 </select>
             </div>
         </>

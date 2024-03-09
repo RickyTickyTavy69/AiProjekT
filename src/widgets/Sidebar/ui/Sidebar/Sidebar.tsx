@@ -12,7 +12,7 @@ const Sidebar = (): JSX.Element => {
   }
 
   return (
-        <div data-testid={"sidebar"} className={`${opened ? 'w-52' : 'w-24'} bg-navbar h-full flex justify-center`}>
+        <div data-testid={"sidebar"} className={`${opened ? 'w-52' : 'w-24'} pt-4 border-r-gray border-r-2 bg-navbar h-full flex justify-center`}>
             <Button data-testid={"toggleButton"} onClick={handleClick} title={`${t(opened ? 'close' : 'open')}`} />
         </div>
   )

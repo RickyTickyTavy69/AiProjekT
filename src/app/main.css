@@ -2,25 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    .hell{
-        --color-bkg: 240deg 4% 11%;
-        --color-content: 210deg 40% 98%;
-        --color-accent1: 288deg 95.8% 60.6%;
-        --color-accent2: 168deg 83.8% 48.2%;
-        --color-navbar: 327deg 83% 95%;
-        --color-contentNavbar: 217deg 32.6% 17.5%;
-    }
-    .dark{
-        --color-bkg: 327deg 83% 95%;
-        --color-content: 217deg 32.6% 17.5%;
-        --color-accent1: 288deg 95.8% 90.6%;
-        --color-accent2: 168deg 83.8% 78.2%;
-        --color-navbar: 240deg 4% 11%;
-        --color-contentNavbar: 210deg 40% 98%;
-    }
-}
-
 @layer components {
     .text-m {
         @apply text-base
@@ -30,7 +11,7 @@
     }
 }
 
-/* here css can be used to create tailwind styles */
-@layer utilities {
-
+body.dark{
+    background-color: #18181B;
+    color: #fff;
 }

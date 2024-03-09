@@ -1,8 +1,4 @@
 import type { Preview } from "@storybook/react";
-import {ThemeDecorator} from "../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-
-import "../../src/app/main.css";
-import 'tailwindcss/tailwind.css';
 
 const preview: Preview = {
   parameters: {
@@ -14,7 +10,6 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [ThemeDecorator("Dark")],
 };
 
 export default preview;

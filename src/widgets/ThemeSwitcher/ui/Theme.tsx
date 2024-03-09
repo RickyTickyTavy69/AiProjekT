@@ -6,7 +6,7 @@ const Theme = (): React.ReactNode => {
   const { theme, handleThemeSwitch } = useTheme()
 
   useEffect(() => {
-    document.documentElement.className = theme.toLowerCase()
+    document.body.className = theme === 'Dark' ? 'dark' : '';
   }, [theme])
 
   return (

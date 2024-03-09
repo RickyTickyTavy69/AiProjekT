@@ -8,7 +8,7 @@ const NavLinkButton = (
 ): JSX.Element => {
   return (
         <Link {...rest}
-              className={`border-navContent
+              className={`border-black dark:border-white
                border-2 h-[30px] min-w-[50px] 
                px-2 rounded-2xl hover:border-red-600`}
               to={to}>

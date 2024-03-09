@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import {Button} from "../index.ts";
+import {NavLinkButton} from "../index.ts";
 import {ThemeDecorator} from "../../../config/storybook/ThemeDecorator/ThemeDecorator.tsx";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-    title: 'uiKit/Button',
-    component: Button,
+    title: 'uiKit/NavLinkButton',
+    component: NavLinkButton,
     parameters: {
         // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
         layout: 'centered',
@@ -15,34 +15,25 @@ const meta = {
     // More on argTypes: https://storybook.js.org/docs/api/argtypes
     argTypes: {
         title: {title: "Button"}
-
     },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof NavLinkButton>;
 
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Button_Light: Story = {
+export const NavLinkButton_Light: Story = {
     args: {
-        title: "Button",
-        onClick: () => {},
+        title: "NavLink Light",
+        to: "/"
     },
 };
 
-export const Button_Dark: Story = {
+export const NavLinkButton_Dark: Story = {
     args: {
-       title: "Button",
-       onClick: () => {},
+        title: "NavLink Dark",
+        to: "/"
     },
     decorators: [ThemeDecorator("Dark")]
 };
-
-export const ClickMe_Light: Story = {
-    args: {
-        title: "Click Me",
-        onClick: () => {alert("u clicked")},
-    },
-};
-

@@ -5,7 +5,7 @@ import {useEffect} from "react";
 export const ThemeDecorator = (theme: ThemeType) => (StoryComponent: StoryFn) => {
 
     useEffect(() => {
-        document.documentElement.className = theme.toLowerCase()
+        document.documentElement.className = theme === "Dark"? "dark": "";
     }, [theme])
 
 

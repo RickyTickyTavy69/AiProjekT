@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { NavLinkButton } from 'src/shared/uiKit'
+import { NavLinkButton } from '../../../shared/uiKit/NavLinkButton'
 import React from 'react'
 
 const NotFound = (): React.ReactNode => {
