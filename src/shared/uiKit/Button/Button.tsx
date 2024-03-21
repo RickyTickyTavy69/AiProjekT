@@ -13,7 +13,8 @@ const Button = ({ title, onClick }: ButtonProps): JSX.Element => {
             <div
                 onClick={onClick}
                  data-testid={"button"}
-                 className={classNames(`text-center border-2 border-black dark:border-white w-fit
+                 className={classNames(`text-center
+                  border-2 border-black dark:border-white w-fit
                                   px-2 py-1 h-fit cursor-pointer text-black dark:text-white`, {}, [])}>
                 {title}
             </div>
