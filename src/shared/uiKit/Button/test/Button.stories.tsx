@@ -29,6 +29,7 @@ export const Button_Light: Story = {
         title: "Button",
         onClick: () => {},
     },
+    decorators: [ThemeDecorator("Bright")]
 };
 
 export const Button_Dark: Story = {
@@ -44,5 +45,6 @@ export const ClickMe_Light: Story = {
         title: "Click Me",
         onClick: () => {alert("u clicked")},
     },
+    decorators: [ThemeDecorator("Bright")]
 };
 

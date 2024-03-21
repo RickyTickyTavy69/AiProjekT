@@ -25,25 +25,22 @@ type Story = StoryObj<typeof meta>;
 const Error = () => {
     throw new Error();
 }
-export const ErrorBoundary_Error: Story = {
+
+export const ErrorBoundary_Error_Light: Story = {
     args: {
         children: <Error/>,
         fallback: <div>Some Error happened, please reload the page</div>
     },
+    decorators: [ThemeDecorator("Bright")]
 };
 
-export const Button_Dark: Story = {
+export const ErrorBoundary_Error_Dark: Story = {
     args: {
-        title: "Button",
-        onClick: () => {},
+        children: <Error/>,
+        fallback: <div>Some Error happened, please reload the page</div>
     },
     decorators: [ThemeDecorator("Dark")]
 };
 
-export const ClickMe_Light: Story = {
-    args: {
-        title: "Click Me",
-        onClick: () => {alert("u clicked")},
-    },
-};
+
 

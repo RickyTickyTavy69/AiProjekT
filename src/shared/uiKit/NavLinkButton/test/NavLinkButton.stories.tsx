@@ -29,7 +29,7 @@ export const NavLinkButton_Light: Story = {
         to: "/",
         children: "NavLink Light"
     },
-    decorators: [RouterDecorator()]
+    decorators: [ThemeDecorator("Bright"), RouterDecorator()]
 };
 
 export const NavLinkButton_Dark: Story = {

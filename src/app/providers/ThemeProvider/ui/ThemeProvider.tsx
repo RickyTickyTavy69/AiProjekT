@@ -23,7 +23,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }): React.React
   const [theme, setTheme] =
         useState<ThemeType>(localTheme || prefedTheme)
 
-  document.documentElement.className = theme.toLowerCase()
+  // document.documentElement.className = theme.toLowerCase() think, this is not needed
 
   const ContextProps = useMemo(() => ({ setTheme, theme }), [theme])
 

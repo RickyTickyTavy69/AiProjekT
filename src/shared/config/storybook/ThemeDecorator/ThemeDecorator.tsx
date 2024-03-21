@@ -5,8 +5,9 @@ import {useEffect} from "react";
 export const ThemeDecorator = (theme: ThemeType) => (StoryComponent: StoryFn) => {
 
     useEffect(() => {
-        document.documentElement.className = theme === "Dark"? "dark": "bright";
+        // document.documentElement.className = theme === "Dark"? "dark": "bright";
         if(theme === "Dark"){
+            console.log("dark");
             document.body?.classList.add("dark");
         } else{
             document.body?.classList.remove("dark");
