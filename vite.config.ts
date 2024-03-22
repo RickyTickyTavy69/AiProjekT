@@ -8,10 +8,12 @@ import { analyzer } from "vite-bundle-analyzer";
 
 export default defineConfig({
     // depending on your application, base can also be "/"
-    plugins: [ react(), svgr(), analyzer({
+    plugins: [ react(),
+        svgr(),
+        analyzer({
         analyzerMode : "server",
         analyzerPort: 3001,
-    }),
+        }),
         eslintPlugin({
             cache: false,
             include: ['./src/**/*.js', './src/**/*.jsx'],

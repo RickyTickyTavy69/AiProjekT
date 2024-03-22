@@ -18,8 +18,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: install modules
         run: yarn
-      - name: build project
-        run: yarn build
+      - name: build project for dev
+        run: yarn dev
       - name: linting
         run: yarn lint
       - name: testing unit
