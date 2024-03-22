@@ -19,7 +19,7 @@ jobs:
       - name: install modules
         run: yarn
       - name: build project for dev
-        run: yarn dev
+        run: yarn build
       - name: linting
         run: yarn lint
       - name: testing unit

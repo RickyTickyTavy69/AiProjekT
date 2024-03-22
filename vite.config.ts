@@ -1,4 +1,5 @@
 /// <reference types="vitest" />
+/// <reference types="vite/client" />
 import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react';
 import eslintPlugin from 'vite-plugin-eslint'
@@ -8,12 +9,19 @@ import { analyzer } from "vite-bundle-analyzer";
 
 export default defineConfig({
     // depending on your application, base can also be "/"
-    plugins: [ react(),
+    plugins: import.meta.env.MODE === "development" ? [ react(),
         svgr(),
         analyzer({
         analyzerMode : "server",
         analyzerPort: 3001,
         }),
+        eslintPlugin({
+            cache: false,
+            include: ['./src/**/*.js', './src/**/*.jsx'],
+            exclude: [],
+        }),
+    ]: [
+        svgr(),
         eslintPlugin({
             cache: false,
             include: ['./src/**/*.js', './src/**/*.jsx'],

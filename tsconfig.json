@@ -28,7 +28,8 @@
   },
   "include": ["src",
     "config/vitest/setupTests.ts",
-    "vite.config.ts"
+    "vite.config.ts",
+    "client.d.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }],
 }
