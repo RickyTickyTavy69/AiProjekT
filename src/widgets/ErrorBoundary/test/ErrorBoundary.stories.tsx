@@ -22,13 +22,13 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 
-const Error = () => {
+const ErrorElement = () => {
     throw new Error();
 }
 
 export const ErrorBoundary_Error_Light: Story = {
     args: {
-        children: <Error/>,
+        children: <ErrorElement/>,
         fallback: <div>Some Error happened, please reload the page</div>
     },
     decorators: [ThemeDecorator("Bright")]
@@ -36,7 +36,7 @@ export const ErrorBoundary_Error_Light: Story = {
 
 export const ErrorBoundary_Error_Dark: Story = {
     args: {
-        children: <Error/>,
+        children: <ErrorElement/>,
         fallback: <div>Some Error happened, please reload the page</div>
     },
     decorators: [ThemeDecorator("Dark")]

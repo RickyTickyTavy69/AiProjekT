@@ -1,4 +1,4 @@
-import { type JSX } from "react"
+import { JSX } from "react"
 import { useTranslation } from "react-i18next"
 import Button from "../../../shared/uiKit/Button/Button.tsx"
 const ErrorFallback = (): JSX.Element => {
@@ -13,7 +13,7 @@ const ErrorFallback = (): JSX.Element => {
             <p>
                 {t(`Something went wrong. Please refresh the page...`)}
             </p>
-            <Button textColor={"main"} onClick={reLoad} title={t(`Reload`)}></Button>
+            <Button onClick={reLoad} title={t(`Reload`)}></Button>
         </div>
   )
 }

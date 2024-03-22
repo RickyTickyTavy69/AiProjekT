@@ -1,4 +1,4 @@
-import { type JSX } from 'react'
+import { JSX } from 'react'
 import classNames from "../../lib/classNames/classNames.ts";
 
 interface ButtonProps {

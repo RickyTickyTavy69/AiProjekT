@@ -17,12 +17,12 @@ describe('ErrorBoundary Test', () => {
 
     test("should render the button", () => {
 
-        const Error = () => {
+        const ErrorElement = () => {
             throw new Error();
         }
 
         Render(
-            <ErrorBoundary children={<Error/>} fallback={<div>Error Fallback</div>}/>
+            <ErrorBoundary children={<ErrorElement/>} fallback={<div>Error Fallback</div>}/>
         )
         expect(screen.getByText("Error Fallback")).toBeInTheDocument();
     })
