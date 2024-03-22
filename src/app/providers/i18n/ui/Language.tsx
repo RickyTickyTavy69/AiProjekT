@@ -12,7 +12,7 @@ const Language = (): null => {
     } else {
       void i18n.changeLanguage(navigator.language)
     }
-  }, [])
+  }, [chosenLanguage, i18n])
 
   return null
 }

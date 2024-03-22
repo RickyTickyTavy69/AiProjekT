@@ -6,7 +6,6 @@ import eslintPlugin from 'vite-plugin-eslint'
 import svgr from "vite-plugin-svgr";
 import { analyzer } from "vite-bundle-analyzer";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default defineConfig(({command, mode}) => {
 
     // this mode is set in scripts with "--mode development"

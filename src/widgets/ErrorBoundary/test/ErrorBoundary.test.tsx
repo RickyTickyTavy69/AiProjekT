@@ -8,9 +8,11 @@ import {Render} from "../../../shared/lib/tests/TestWrapper.tsx";
 describe('ErrorBoundary Test', () => {
     test("should render the button", () => {
         Render(
-            <ErrorBoundary children={<div>
-                Rendered UI
-            </div>} fallback={<div>Error Fallback</div>}/>
+            <ErrorBoundary fallback={<div>Error Fallback</div>}>
+                <div>
+                    Rendered UI
+                </div>
+            </ErrorBoundary>
         )
         expect(screen.getByText("Rendered UI")).toBeInTheDocument();
     })
@@ -22,7 +24,9 @@ describe('ErrorBoundary Test', () => {
         }
 
         Render(
-            <ErrorBoundary children={<ErrorElement/>} fallback={<div>Error Fallback</div>}/>
+            <ErrorBoundary fallback={<div>Error Fallback</div>}>
+                <ErrorElement/>
+            </ErrorBoundary>
         )
         expect(screen.getByText("Error Fallback")).toBeInTheDocument();
     })

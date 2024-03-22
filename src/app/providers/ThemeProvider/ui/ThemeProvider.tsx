@@ -9,7 +9,7 @@ interface ContextProps {
 
 const initial: ContextProps = {
   theme: 'Dark',
-  setTheme: (): any => null
+  setTheme: (): void => {}
 }
 
 export const ThemeContext = createContext<ContextProps>(initial)

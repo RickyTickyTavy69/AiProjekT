@@ -3,8 +3,8 @@ const classNames = (cls: string, mods: Mods = {}, additional: string[] = []): st
   return [
     cls,
     ...additional,
-    ...Object.entries(mods).filter(([_, value]) => Boolean(value))
-      .map(([className, _]) => className)
+    ...Object.entries(mods).filter(([, value]) => Boolean(value))
+      .map(([className]) => className)
   ].join(' ')
 }
 
