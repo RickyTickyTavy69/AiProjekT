@@ -6,6 +6,7 @@
     "dev": "vite",
     "test:unit": "vitest",
     "build": "tsc && vite build",
+    "build:dev": "tsc && vite build --mode development",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -16,6 +17,7 @@
   "dependencies": {
     "@vitejs/plugin-react": "^4.2.1",
     "babel-plugin-i18next-extract": "^0.10.0",
+    "cross-env": "^7.0.3",
     "i18next": "^23.10.0",
     "i18next-browser-languagedetector": "^7.2.0",
     "i18next-http-backend": "^2.5.0",
