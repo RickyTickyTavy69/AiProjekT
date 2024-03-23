@@ -1,11 +1,9 @@
-// eslint-disable
 import axios, {AxiosInstance} from "axios";
 
 type ClientOptions = {
     baseURL: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 class AxiosClient{
     public readonly apiInstance: AxiosInstance;
     constructor({baseURL}: ClientOptions){
