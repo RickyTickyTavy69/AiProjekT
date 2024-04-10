@@ -1,1 +1,1 @@
-export { default as LazyMenu } from './ui/Menu.async'
+export { default as LazyMenu } from './ui/Create.async.tsx'

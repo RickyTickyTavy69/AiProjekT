@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react';
 import eslintPlugin from 'vite-plugin-eslint'
 import svgr from "vite-plugin-svgr";
 import { analyzer } from "vite-bundle-analyzer";
+import commonjs from '@rollup/plugin-commonjs';
 
 export default defineConfig(({command, mode}) => {
 
@@ -15,7 +16,8 @@ export default defineConfig(({command, mode}) => {
 
     return {
         // depending on your application, base can also be "/"
-        plugins: mode === "development" && command === "build" ? [ react(),
+        plugins: mode === "development" && command === "build" ? [
+            react(),
             svgr(),
             analyzer({
                 analyzerMode : "server",
@@ -26,7 +28,10 @@ export default defineConfig(({command, mode}) => {
                 include: ['./src/**/*.js', './src/**/*.jsx'],
                 exclude: [],
             }),
+            commonjs(),
         ]: [
+            commonjs(),
+            react(),
             svgr(),
             eslintPlugin({
                 cache: false,

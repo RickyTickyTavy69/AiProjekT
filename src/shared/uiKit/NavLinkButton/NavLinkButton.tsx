@@ -1,18 +1,29 @@
 import { type JSX } from 'react'
 import { Link, type LinkProps } from 'react-router-dom'
+import {IconName} from "../../assets/assets.types.ts";
+import {DynamicIconImport} from "../../assets";
 
-interface NavLinkButtonProps extends LinkProps {}
+interface NavLinkButtonProps extends LinkProps {
+    icon?: IconName;
+    showTitle?: boolean;
+}
 
 const NavLinkButton = (
-  { to, children, ...rest }: NavLinkButtonProps
+  { to, children, icon, showTitle = true, ...rest }: NavLinkButtonProps
 ): JSX.Element => {
+    const Icon = DynamicIconImport(icon);
+    console.log(Icon);
   return (
         <Link {...rest}
               className={`border-black dark:border-white
-               border-2 h-[30px] min-w-[50px] 
-               px-2 rounded-2xl hover:border-red-600`}
+                text-center
+                text-xl
+               border-2 h-fit w-fit transition transition-transform duration-1000
+               px-2 py-2 rounded-2xl hover:border-red-600
+               flex items-center gap-2`}
               to={to}>
-            {children}
+            {Icon}
+            {showTitle && children}
         </Link>
   )
 }

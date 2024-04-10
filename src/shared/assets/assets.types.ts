@@ -1,0 +1,1 @@
+export type IconName = "ai_art" | "home" | "profile";

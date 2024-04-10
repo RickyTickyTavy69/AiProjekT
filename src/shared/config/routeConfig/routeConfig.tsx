@@ -1,5 +1,5 @@
 import { type RouteProps } from 'react-router-dom'
-import LazyMenu from '../../../components/Menu/ui/Menu.async'
+import LazyMenu from '../../../components/Menu/ui/Create.async.tsx'
 import { Suspense } from 'react'
 import LazyProfile from '../../../components/Profile/ui/Profile.async'
 import SignUp from 'src/components/SignUp/ui/SignUp'
@@ -7,16 +7,8 @@ import { Main } from 'src/components/Main'
 import NotFound from 'src/components/NotFound/ui/NotFound'
 import { PageLoader } from 'src/widgets/PageLoader'
 
-export type AppRoutes = 'menu' | 'profile' | 'signUp' | 'search' | 'list' | 'notFound'
+import {RoutePaths} from "./RouterTypes.ts";
 
-export const RoutePaths: Record<AppRoutes, string> = {
-  list: '/list',
-  menu: '/menu',
-  profile: '/profile',
-  search: '/search',
-  signUp: '/signUp',
-  notFound: '*'
-}
 
 export const RouteConfig: RouteProps[] = [
   {
@@ -24,7 +16,7 @@ export const RouteConfig: RouteProps[] = [
     element: <Main />
   },
   {
-    path: RoutePaths.menu,
+    path: RoutePaths.create,
     element: (
       <Suspense fallback={<PageLoader/>}>
         <LazyMenu/>

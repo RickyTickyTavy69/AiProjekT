@@ -15,7 +15,6 @@ const meta = {
     // More on argTypes: https://storybook.js.org/docs/api/argtypes
     argTypes: {
         title: {title: "Button"}
-
     },
 } satisfies Meta<typeof Button>;
 
@@ -48,3 +47,30 @@ export const ClickMe_Light: Story = {
     decorators: [ThemeDecorator("Bright")]
 };
 
+// light different size
+export const Button_Light_Middle: Story = {
+    args: {
+        title: "Button",
+        onClick: () => {},
+        size: "M"
+    },
+    decorators: [ThemeDecorator("Bright")]
+};
+
+export const Button_Light_Large: Story = {
+    args: {
+        title: "Button",
+        onClick: () => {},
+        size: "L"
+    },
+    decorators: [ThemeDecorator("Bright")]
+};
+
+export const Button_Light_XL: Story = {
+    args: {
+        title: "Button",
+        onClick: () => {},
+        size: "XL"
+    },
+    decorators: [ThemeDecorator("Bright")]
+};
