@@ -22,7 +22,7 @@ const NavLinkButton = (
                px-2 py-2 rounded-2xl hover:border-red-600
                flex items-center gap-2`}
               to={to}>
-            {Icon}
+            {icon && Icon}
             {showTitle && children}
         </Link>
   )
