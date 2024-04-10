@@ -7,7 +7,7 @@ import {RoutePaths} from "../../../../shared/config/routeConfig/RouterTypes.ts";
 const Sidebar = (): JSX.Element => {
   const { t } = useTranslation();
 
-  const [opened, setOpened] = useState<boolean>(true);
+  const [opened, setOpened] = useState<boolean>(false);
 
   const handleClick = (): void => {
     setOpened((prevState) => !prevState);

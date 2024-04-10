@@ -15,12 +15,13 @@ describe('Sidebar', () => {
         Render(<SidebarWithTranslation/>)
         expect(screen.getByTestId("sidebar")).toBeInTheDocument();
     })
+
     test("should toggle the Sidebar", async () => {
         Render(<SidebarWithTranslation/>);
-        expect(screen.getByText("open")).toBeInTheDocument();
+        expect(screen.getByText(`>`)).toBeInTheDocument();
         const button = screen.getByTestId("button");
         await user.click(button);
-        expect(screen.getByText("close")).toBeInTheDocument();
-        expect(screen.queryByAltText("open")).not.toBeInTheDocument();
+        expect(screen.getByText("<")).toBeInTheDocument();
+        expect(screen.queryByAltText(">")).not.toBeInTheDocument();
     })
 })
