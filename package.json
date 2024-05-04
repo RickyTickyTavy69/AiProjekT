@@ -21,6 +21,7 @@
     "axios": "^1.6.8",
     "babel-plugin-i18next-extract": "^0.10.0",
     "cross-env": "^7.0.3",
+    "framer-motion": "^11.1.7",
     "i18next": "^23.10.0",
     "i18next-browser-languagedetector": "^7.2.0",
     "i18next-http-backend": "^2.5.0",
