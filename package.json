@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "start:dev:server": "node ./json-server/index.js",
-    "test:unit": "vitest",
+    "test:unit:watch": "vitest watch",
+    "test:unit:run": "vitest run",
     "build": "tsc && vite build",
     "build:dev": "tsc && vite build --mode development",
     "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",

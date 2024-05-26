@@ -3,6 +3,6 @@
 
 # yarn build
 yarn lint
-yarn test:unit
-# yarn storybook:build
-# yarn test:ui:ci
+yarn test:unit:run
+#yarn storybook:build
+#yarn test:ui:ci
