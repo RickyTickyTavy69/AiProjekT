@@ -1,5 +1,5 @@
 import { type RouteProps } from 'react-router-dom'
-import LazyMenu from '../../../components/Menu/ui/Create.async.tsx'
+import LazyMenu from '../../../pages/Create/ui/Create.async.tsx'
 import { Suspense } from 'react'
 import LazyProfile from '../../../pages/Profile/ui/Profile.async'
 import SignUp from '../../../pages/SignUp/ui/SignUp'
