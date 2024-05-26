@@ -1,10 +1,10 @@
 import { type RouteProps } from 'react-router-dom'
 import LazyMenu from '../../../components/Menu/ui/Create.async.tsx'
 import { Suspense } from 'react'
-import LazyProfile from '../../../components/Profile/ui/Profile.async'
-import SignUp from 'src/components/SignUp/ui/SignUp'
-import { Main } from 'src/components/Main'
-import NotFound from 'src/components/NotFound/ui/NotFound'
+import LazyProfile from '../../../pages/Profile/ui/Profile.async'
+import SignUp from '../../../pages/SignUp/ui/SignUp'
+import { Main } from '../../../pages/Main.tsx'
+import NotFound from '../../../pages/NotFound/ui/NotFound'
 import { PageLoader } from 'src/widgets/PageLoader'
 
 import {RoutePaths} from "./RouterTypes.ts";

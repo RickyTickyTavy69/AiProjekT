@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { Main } from 'src/components/Main'
+import { Main } from '../../../../pages/Main.tsx'
 import { RouteConfig } from 'src/shared/config/routeConfig/routeConfig'
 
 const AppRouter = (): React.ReactNode => {

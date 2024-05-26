@@ -3,7 +3,7 @@ import { Theme } from 'src/widgets/ThemeSwitcher'
 import { SelectLanguage } from 'src/widgets/SelectLanguage'
 import {useTranslation} from "react-i18next";
 import {Button} from "../../../shared/uiKit/Button";
-import {Modal} from "../../../shared/uiKit/Modal";
+import {LoginModal} from "../../../features/AuthByUserName";
 
 const Navbar = (): React.ReactNode => {
 
@@ -20,9 +20,10 @@ const Navbar = (): React.ReactNode => {
             <div className={'flex items-center'}>
                 <Button onClick={onModalToggle} title={t(`Login`)}/>
             </div>
-            <Modal isOpen={modalOpen} onClose={onModalToggle} >
-                {'this is the Modal Windows'}
-            </Modal>
+            <LoginModal
+                isOpen={modalOpen}
+                onClose={onModalToggle}
+            />
             <div className={'flex gap-4 items-center'}>
                 <Theme/>
                 <SelectLanguage short={false}/>

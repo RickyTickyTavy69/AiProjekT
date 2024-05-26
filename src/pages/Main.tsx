@@ -1,8 +1,8 @@
 import { type JSX } from 'react'
 import { Outlet } from 'react-router-dom'
-import classNames from 'src/shared/lib/classNames/classNames'
-import { Navbar } from 'src/widgets/Navbar'
-import Sidebar from 'src/widgets/Sidebar/ui/Sidebar/Sidebar'
+import classNames from '../shared/lib/classNames/classNames.ts'
+import { Navbar } from '../widgets/Navbar'
+import Sidebar from '../widgets/Sidebar/ui/Sidebar/Sidebar.tsx'
 import { useTranslation } from 'react-i18next'
 
 export const Main = (): JSX.Element => {

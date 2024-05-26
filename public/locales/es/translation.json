@@ -16,5 +16,8 @@
   "looks, like this page does not exist. Go back to the": "Esta pagina aun no existe. Por favor, navigate a la",
   "Main Page": "Pagina Principal",
   "Something went wrong. Please refresh the page...": "hay un error, por favor, recarga la pagina...",
-  "Reload": "Recargar"
+  "Reload": "Recargar",
+  "Login": "Entrar",
+  "Username": "Nombre",
+  "Password": "Сontraseña"
 }

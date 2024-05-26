@@ -16,5 +16,8 @@
   "looks, like this page does not exist. Go back to the": "Такой страницы всё ещё нет. Вы можете вернуться на",
   "Main Page": "Главную страницу",
   "Something went wrong. Please refresh the page...": "Что то пошло не так, пожалуйста, обновите страницу...",
-  "Reload": "Обновить"
+  "Reload": "Обновить",
+  "Login": "Войти",
+  "Username": "Никнейм",
+  "Password": "Пароль"
 }

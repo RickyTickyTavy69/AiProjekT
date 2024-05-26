@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import {Portal} from "../Portal"
 import classNames from "../../lib/classNames/classNames.ts";
 import {motion} from "framer-motion";
@@ -8,9 +8,12 @@ type ModalProps = {
     isOpen: boolean;
     onClose: () => void;
     children: React.ReactNode;
+    lazy?: boolean;
 }
 
-const Modal = ({isOpen, onClose, children}: ModalProps) => {
+const Modal = ({isOpen, onClose, children, lazy = false}: ModalProps) => {
+
+    const [isMounted, setIsMounted] = useState(false);
 
     const clickHandler = useCallback( () => {
         console.log("click")
@@ -30,6 +33,7 @@ const Modal = ({isOpen, onClose, children}: ModalProps) => {
         closed: { opacity: 0, scale: 0.5},
     }
 
+
     useEffect(() => {
         if(isOpen){
             window.addEventListener("keydown", keyDownHandler);
@@ -38,6 +42,16 @@ const Modal = ({isOpen, onClose, children}: ModalProps) => {
             window.removeEventListener("keydown", keyDownHandler);
         }
     }, [isOpen, keyDownHandler]);
+
+    useEffect(() => {
+        if(isOpen){
+            setIsMounted(true)
+        }
+    }, [isOpen])
+
+    if(lazy && !isMounted){
+        return null;
+    }
 
     return (
         <Portal>
@@ -56,7 +70,7 @@ const Modal = ({isOpen, onClose, children}: ModalProps) => {
                     animate={isOpen ? "open" : "closed"}
                     variants={variants}
                  onClick={(e) => e.stopPropagation()}
-                     className={'bg-white text-black rounded h-52 w-52 opacity-0'}>
+                     className={'bg-modal_color dark:bg-modal_color_dark text-black rounded h-52 w-96 opacity-0 p-2'}>
                     {children}
                 </motion.div>
             </motion.div>
