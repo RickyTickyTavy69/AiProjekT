@@ -18,6 +18,9 @@
   "Something went wrong. Please refresh the page...": "Something went wrong. Please refresh the page...",
   "Reload": "Reload",
   "Login": "Login",
+  "Logout" : "Logout",
   "Username": "Username",
-  "Password": "Password"
+  "Password": "Password",
+  "wrong login data, please try again": "wrong login data, please try again",
+  "Authorization Form": "Authorization Form"
 }

@@ -1,21 +1,21 @@
-import { type JSX } from 'react'
+import {type JSX, useEffect} from 'react'
 import { Outlet } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import {useDispatch} from "react-redux";
+import {userActions} from "../entities/User";
+
 import classNames from '../shared/lib/classNames/classNames.ts'
 import { Navbar } from '../widgets/Navbar'
 import Sidebar from '../widgets/Sidebar/ui/Sidebar/Sidebar.tsx'
-import { useTranslation } from 'react-i18next'
+
 
 export const Main = (): JSX.Element => {
   const { t } = useTranslation()
 
-    /* const fetchData = async () => {
-      const response = await fetch("https://qbrjehay.api.sanity.io/v2024-01-10/data/query/production?query=%0A++++++++*%5B_type+%3D%3D+%22skill%22%5D%0A++++")
-      const data = await response.json();
-      console.log("fetched data", data);
-  }
-  useEffect(() => {
-      fetchData()
-  }, []) */
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(userActions.getUserFromLocalStorage())
+    }, [dispatch])
 
   return (
         <div>

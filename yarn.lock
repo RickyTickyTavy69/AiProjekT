@@ -5485,6 +5485,11 @@ escodegen@^2.1.0:
   optionalDependencies:
     source-map "~0.6.1"
 
+eslint-plugin-i18n@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-i18n/-/eslint-plugin-i18n-2.3.1.tgz#7cff32858fdfe87cd3019c9f8dbc3ee9887d6bf0"
+  integrity sha512-WSL41vOq5hz4t4CkX11yV2OQ+MHOXwPCcMIOPoaudGyKZkz8DLzGgnJ6OeStKl2GeJj0OXm5u8h41/IWUPWoUA==
+
 eslint-plugin-react-hooks@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.6.0.tgz#4c3e697ad95b77e93f8646aaa1630c1ba607edd3"

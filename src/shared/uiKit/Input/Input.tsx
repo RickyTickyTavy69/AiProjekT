@@ -28,7 +28,6 @@ const Input = memo((props : InputProps) => {
     }
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        console.log("positon", caretPosition);
         onChange?.(e.currentTarget.value);
         setCaretPosition(e.currentTarget.value.length);
     }
@@ -51,7 +50,6 @@ const Input = memo((props : InputProps) => {
         }
     }, [autoFocus])
 
-    console.log("is focused", autoFocus)
 
     return(
         <div className={"my-2 flex text-black dark:text-white"}>

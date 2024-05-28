@@ -12,7 +12,6 @@ const NavLinkButton = (
   { to, children, icon, showTitle = true, ...rest }: NavLinkButtonProps
 ): JSX.Element => {
     const Icon = DynamicIconImport(icon);
-    console.log(Icon);
   return (
         <Link {...rest}
               className={`border-black dark:border-white

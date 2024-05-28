@@ -74,6 +74,8 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-storybook": "^0.8.0",
+    "eslint-plugin-i18n": "^2.3.1",
+    "husky": "^8.0.0",
     "jsdom": "^24.0.0",
     "json-server": "0.17.4",
     "loki": "^0.34.0",
@@ -85,8 +87,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
-    "vite-plugin-eslint": "^1.8.1",
-    "husky": "^8.0.0"
+    "vite-plugin-eslint": "^1.8.1"
   },
   "eslintConfig": {
     "extends": [

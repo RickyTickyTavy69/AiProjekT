@@ -16,7 +16,6 @@ const Modal = ({isOpen, onClose, children, lazy = false}: ModalProps) => {
     const [isMounted, setIsMounted] = useState(false);
 
     const clickHandler = useCallback( () => {
-        console.log("click")
         if(onClose){
             onClose();
         }

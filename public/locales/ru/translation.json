@@ -18,6 +18,9 @@
   "Something went wrong. Please refresh the page...": "Что то пошло не так, пожалуйста, обновите страницу...",
   "Reload": "Обновить",
   "Login": "Войти",
+  "Logout" : "Выйти",
   "Username": "Никнейм",
-  "Password": "Пароль"
+  "Password": "Пароль",
+  "wrong login data, please try again": "неверные данные, пожалуйста, попробуйте еще раз",
+  "Authorization Form": "Форма авторизации"
 }

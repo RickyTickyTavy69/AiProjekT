@@ -8,12 +8,13 @@ interface ButtonProps {
     onClick?: () => void
     size?: ButtonSize
     reverseTheme?: boolean
+    disabled?: boolean
 }
 
 const Button = ({ title,
                     onClick,
                     size = "M",
-                    reverseTheme = false
+                    disabled = false,
 }: ButtonProps): JSX.Element => {
 
 
@@ -26,7 +27,7 @@ const Button = ({ title,
                  "text-lg px-2 py-1": (size === "M"),
                  "text-xl px-2.5 py-1.5": (size === "L"),
                  "text-2xl px-3 py-1.5": (size === "XL"),
-                     "border-white dark:border-black text-white dark:text-black" : reverseTheme
+                     "opacity-40 cursor-default pointer-events-none" : disabled,
                  }, [])}>
                 {title}
             </div>
