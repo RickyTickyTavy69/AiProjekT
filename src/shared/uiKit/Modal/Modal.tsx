@@ -9,9 +9,10 @@ type ModalProps = {
     onClose: () => void;
     children: React.ReactNode;
     lazy?: boolean;
+    isTest?: boolean;
 }
 
-const Modal = ({isOpen, onClose, children, lazy = false}: ModalProps) => {
+const Modal = ({isOpen = true, onClose, children, lazy = false, isTest = false}: ModalProps) => {
 
     const [isMounted, setIsMounted] = useState(false);
 
@@ -53,12 +54,33 @@ const Modal = ({isOpen, onClose, children, lazy = false}: ModalProps) => {
     }
 
     return (
-        <Portal>
+        !isTest ?
+            <Portal>
+                <motion.div
+                    data-testid={"modal-overlay"}
+                    animate={isOpen ? "open" : "closed"}
+                    variants={variants}
+                    onClick={clickHandler} className={classNames(`fixed top-0 bottom-0 left-0 right-0
+             flex justify-center items-center -z-10 bg-overlay_color`,
+                    {
+                        'z-50 pointer-events-auto': isOpen,
+                    }
+                )}>
+                    <motion.div
+                        data-testid={"modal-window"}
+                        animate={isOpen ? "open" : "closed"}
+                        variants={variants}
+                        onClick={(e) => e.stopPropagation()}
+                        className={'bg-modal_color dark:bg-modal_color_dark text-black rounded h-52 w-96 opacity-0 p-2'}>
+                        {children}
+                    </motion.div>
+                </motion.div>
+            </Portal> :
             <motion.div
                 data-testid={"modal-overlay"}
                 animate={isOpen ? "open" : "closed"}
                 variants={variants}
-                onClick={clickHandler} className={classNames(`fixed top-0 bottom-0 left-0 right-0 
+                onClick={clickHandler} className={classNames(`fixed top-0 bottom-0 left-0 right-0
              flex justify-center items-center -z-10 bg-overlay_color`,
                 {
                     'z-50 pointer-events-auto': isOpen,
@@ -68,12 +90,11 @@ const Modal = ({isOpen, onClose, children, lazy = false}: ModalProps) => {
                     data-testid={"modal-window"}
                     animate={isOpen ? "open" : "closed"}
                     variants={variants}
-                 onClick={(e) => e.stopPropagation()}
-                     className={'bg-modal_color dark:bg-modal_color_dark text-black rounded h-52 w-96 opacity-0 p-2'}>
+                    onClick={(e) => e.stopPropagation()}
+                    className={'bg-modal_color dark:bg-modal_color_dark text-black rounded h-52 w-96 opacity-0 p-2'}>
                     {children}
                 </motion.div>
             </motion.div>
-        </Portal>
     )
 }
 

@@ -8,6 +8,7 @@ import {LoginByUserName} from "../../model/services/LoginByUserName/LoginByUserN
 import {getLoginState} from "../../model/selectors/getLoginState/getLoginState.ts";
 import {useSelector} from "react-redux";
 import {memo, useCallback} from "react";
+import {AppDispatch} from "../../../../app/providers/StoreProvider/config/store.ts";
 
 
 const LoginForm = memo(() => {
@@ -16,7 +17,7 @@ const LoginForm = memo(() => {
 
     const {t} = useTranslation();
 
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
 
     const onChangeUsername = useCallback((value: string) => {
         dispatch(loginActions.setUsername(value));

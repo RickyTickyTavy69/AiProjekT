@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import {Modal} from "../index.ts";
 import {ThemeDecorator} from "../../../config/storybook/ThemeDecorator/ThemeDecorator.tsx";
 
+
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
     title: 'uiKit/Modal',
@@ -12,6 +13,11 @@ const meta = {
     },
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ['autodocs'],
+    argTypes: {
+        isOpen: { control: 'boolean' },
+        children: { control: 'text' },
+        onClose: { control: 'text' },
+    }
     // More on argTypes: https://storybook.js.org/docs/api/argtypes
 } satisfies Meta<typeof Modal>;
 
@@ -24,7 +30,8 @@ export const Modal_Light: Story = {
     args: {
         isOpen: true,
         onClose: () => {},
-        children : "this is modal"
+        children : "this is modal",
+        isTest: true,
     },
     decorators: [ThemeDecorator("Bright")]
 };
@@ -33,7 +40,8 @@ export const Modal_Dark: Story = {
     args: {
         isOpen: true,
         onClose: () => {},
-        children : "this is modal"
+        children : "this is modal",
+        isTest: true,
     },
     decorators: [ThemeDecorator("Dark")]
 };
