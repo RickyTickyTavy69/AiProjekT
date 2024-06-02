@@ -9,7 +9,7 @@
     "test:unit:run": "vitest run",
     "build": "tsc && vite build",
     "build:dev": "tsc && vite build --mode development",
-    "test:ui:ci": "loki --reactUri file:./storybook-static",
+    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
