@@ -22,7 +22,7 @@ const Modal = (
         onClose,
         children,
         lazy = false,
-        isTest = false
+        isTest = false,
     }: ModalProps
 ) => {
     const [isMounted, setIsMounted] = useState(false);
@@ -69,7 +69,7 @@ const Modal = (
           <Portal>
               <motion.div
                   data-testid={"modal-overlay"}
-                  // animate={isOpen ? "open" : "closed"}
+                  animate={isOpen ? "open" : "closed"}
                   variants={variants}
                   onClick={clickHandler} className={classNames(`fixed top-0 bottom-0 left-0 right-0
              flex justify-center items-center -z-10 bg-overlay_color`,
@@ -79,7 +79,7 @@ const Modal = (
               )}>
                   <motion.div
                       data-testid={"modal-window"}
-                      // animate={isOpen ? "open" : "closed"}
+                      animate={isOpen ? "open" : "closed"}
                       variants={variants}
                       onClick={(e) => e.stopPropagation()}
                       className={'bg-modal_color dark:bg-modal_color_dark text-black rounded h-52 w-96 opacity-0 p-2'}>
