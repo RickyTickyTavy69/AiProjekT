@@ -10,6 +10,7 @@ import { LoginModal } from "../../../features/AuthByUserName";
 import { getAuthData } from "../../../entities/User/model/selectors/getAuthData/getAuthData.ts";
 import { User } from "../../../entities/User";
 import {userActions} from "../../../entities/User";
+import {loginActions} from "../../../features/AuthByUserName";
 
 const Navbar = (): React.ReactNode => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
@@ -18,6 +19,9 @@ const Navbar = (): React.ReactNode => {
   const dispatch = useDispatch();
 
   const onModalToggle = useCallback(() => {
+    if(modalOpen){
+      dispatch(loginActions.clearError());
+    }
     setModalOpen((prev) => !prev);
   }, []);
 
@@ -25,7 +29,6 @@ const Navbar = (): React.ReactNode => {
       dispatch(userActions.logout());
   }, [dispatch])
 
-  console.log("user is", user);
 
   useEffect(() => {
     if(user?.username && user.id){
@@ -61,7 +64,7 @@ const Navbar = (): React.ReactNode => {
           <div className={"flex items-center"}>
             <Button onClick={onModalToggle} title={t(`Login`)} />
           </div>
-          <LoginModal isOpen={modalOpen} onClose={onModalToggle} />
+          {modalOpen && <LoginModal isOpen={modalOpen} onClose={onModalToggle} />}
           <div className={"flex gap-4 items-center"}>
             <Theme />
             <SelectLanguage short={false} />

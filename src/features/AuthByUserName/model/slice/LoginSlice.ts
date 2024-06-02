@@ -19,6 +19,9 @@ const LoginSlice = createSlice({
         },
         setPassword(state, action: PayloadAction<string>) {
             state.password = action.payload;
+        },
+        clearError(state){
+            state.error = "";
         }
     },
     extraReducers: (builder : ActionReducerMapBuilder<LoginSchema>) => {

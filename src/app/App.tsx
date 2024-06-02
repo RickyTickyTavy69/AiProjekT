@@ -21,10 +21,6 @@ import {StoreProvider} from "./providers/StoreProvider";
 // потом на другие компоненты тоже написать тесты и сторисы.
 
 const App = (): JSX.Element => {
-
-
-
-
   return (
       <StoreProvider>
         <BrowserRouter>

@@ -1,8 +1,8 @@
-import { type RouteProps } from 'react-router-dom'
-import LazyMenu from '../../../pages/Create/ui/Create.async.tsx'
 import { Suspense } from 'react'
+import { type RouteProps } from 'react-router-dom'
+
+import LazyCreate from '../../../pages/Create/ui/Create.async.tsx'
 import LazyProfile from '../../../pages/Profile/ui/Profile.async'
-import SignUp from '../../../pages/SignUp/ui/SignUp'
 import { Main } from '../../../pages/Main.tsx'
 import NotFound from '../../../pages/NotFound/ui/NotFound'
 import { PageLoader } from 'src/widgets/PageLoader'
@@ -19,7 +19,7 @@ export const RouteConfig: RouteProps[] = [
     path: RoutePaths.create,
     element: (
       <Suspense fallback={<PageLoader/>}>
-        <LazyMenu/>
+        <LazyCreate/>
       </Suspense>
     )
   },
@@ -34,10 +34,6 @@ export const RouteConfig: RouteProps[] = [
   {
     path: RoutePaths.search,
     element: <Main />
-  },
-  {
-    path: RoutePaths.signUp,
-    element: <SignUp />
   },
   {
     path: RoutePaths.notFound,

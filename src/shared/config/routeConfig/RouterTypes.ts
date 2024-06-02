@@ -1,4 +1,4 @@
-export type AppRoutes = 'main' | 'create' | 'profile' | 'signUp' | 'search' | 'list' | 'notFound';
+export type AppRoutes = 'main' | 'create' | 'profile' | 'search' | 'list' | 'notFound';
 
 export const RoutePaths: Record<AppRoutes, string> = {
     main: '/',
@@ -6,6 +6,5 @@ export const RoutePaths: Record<AppRoutes, string> = {
     create: '/create',
     profile: '/profile',
     search: '/search',
-    signUp: '/signUp',
     notFound: '*'
 };
