@@ -5,6 +5,11 @@
     "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "plugins": ["react", "react-hooks", "@typescript-eslint",  "i18n"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {

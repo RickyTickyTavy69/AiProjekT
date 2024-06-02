@@ -23,6 +23,7 @@ const Navbar = (): React.ReactNode => {
       dispatch(loginActions.clearError());
     }
     setModalOpen((prev) => !prev);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onLogOut = useCallback(() => {

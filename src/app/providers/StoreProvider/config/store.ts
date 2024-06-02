@@ -13,7 +13,6 @@ export function createReduxStore(initialState?: StateSchema){
     const ReducerManager = createReducerManager(rootReducer);
 
     const store  = configureStore<StateSchema>({
-            // eslint-disable-next-line
             reducer: ReducerManager.reduce,
             devTools: import.meta.env.DEV,
             preloadedState: initialState,

@@ -42,7 +42,6 @@ const LoginForm = memo(() => {
     }, [dispatch]);
 
     const handleSubmit = useCallback(() => {
-        // eslint-disable-next-line
         dispatch(LoginByUserName({username, password}));
     }, [dispatch, username, password])
 
