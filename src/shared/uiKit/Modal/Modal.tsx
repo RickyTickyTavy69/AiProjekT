@@ -9,7 +9,7 @@ import {motion} from "framer-motion";
 
 
 type ModalProps = {
-    // isOpen: boolean;
+    isOpen: boolean;
     // onClose: () => void;
     children: React.ReactNode;
     // lazy?: boolean;
@@ -18,7 +18,7 @@ type ModalProps = {
 
 const Modal = (
     {
-        // isOpen = true,
+        isOpen = true,
         // onClose,
         children,
         // lazy = false,
@@ -67,7 +67,7 @@ const Modal = (
   return (
     <motion.div
       data-testid={"modal-overlay"}
-      // animate={isOpen ? "open" : "closed"}
+      animate={isOpen ? "open" : "closed"}
         variants={variants}
         // onClick={clickHandler}
       className={classNames(
@@ -80,7 +80,7 @@ const Modal = (
     >
       <motion.div
         data-testid={"modal-window"}
-        // animate={isOpen ? "open" : "closed"}
+        animate={isOpen ? "open" : "closed"}
         variants={variants}
         onClick={(e) => e.stopPropagation()}
         className={
