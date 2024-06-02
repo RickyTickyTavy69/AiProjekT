@@ -9,7 +9,7 @@ import {motion} from "framer-motion";
 
 
 type ModalProps = {
-    // isOpen: boolean;
+    isOpen: boolean;
     // onClose: () => void;
     children: React.ReactNode;
     // lazy?: boolean;
@@ -18,7 +18,7 @@ type ModalProps = {
 
 const Modal = (
     {
-        // isOpen = true,
+        isOpen = true,
         // onClose,
         children,
         // lazy = false,
@@ -74,7 +74,7 @@ const Modal = (
         `fixed top-0 bottom-0 left-0 right-0
              flex justify-center items-center -z-10 bg-overlay_color`,
         {
-         // "z-50 pointer-events-auto": isOpen,
+         "z-50 pointer-events-auto": isOpen,
         },
       )}
     >
