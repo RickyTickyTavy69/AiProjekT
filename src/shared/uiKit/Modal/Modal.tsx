@@ -1,33 +1,33 @@
 import React, {
-    // useCallback,
-    // useEffect,
-    // useState
+    useCallback,
+    useEffect,
+    useState
 } from "react";
-// import {Portal} from "../Portal"
+import {Portal} from "../Portal"
 import classNames from "../../lib/classNames/classNames.ts";
 import {motion} from "framer-motion";
 
 
 type ModalProps = {
     isOpen: boolean;
-    // onClose: () => void;
+    onClose: () => void;
     children: React.ReactNode;
-    // lazy?: boolean;
-    // isTest?: boolean;
+    lazy?: boolean;
+    isTest?: boolean;
 }
 
 const Modal = (
     {
         isOpen = true,
-        // onClose,
+        onClose,
         children,
-        // lazy = false,
-        // isTest = false
+        lazy = false,
+        isTest = false
     }: ModalProps
 ) => {
-  // const [isMounted, setIsMounted] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
 
-  /* const clickHandler = useCallback( () => {
+    const clickHandler = useCallback( () => {
         if(onClose){
             onClose();
         }
@@ -37,7 +37,7 @@ const Modal = (
         if(e.key === "Escape"){
             clickHandler();
         }
-    }, [clickHandler]) */
+    }, [clickHandler])
 
     const variants = {
         open: { opacity: 1, scale: 1},
@@ -45,7 +45,7 @@ const Modal = (
     }
 
 
-    /* useEffect(() => {
+     useEffect(() => {
         if(isOpen){
             window.addEventListener("keydown", keyDownHandler);
         }
@@ -62,78 +62,51 @@ const Modal = (
 
     if(lazy && !isMounted){
         return null;
-    }*/
+    }
 
   return (
-    <motion.div
-      data-testid={"modal-overlay"}
-      // animate={isOpen ? "open" : "closed"}
-        variants={variants}
-        // onClick={clickHandler}
-      className={classNames(
-        `fixed top-0 bottom-0 left-0 right-0
+      !isTest ?
+          <Portal>
+              <motion.div
+                  data-testid={"modal-overlay"}
+                  // animate={isOpen ? "open" : "closed"}
+                  variants={variants}
+                  onClick={clickHandler} className={classNames(`fixed top-0 bottom-0 left-0 right-0
              flex justify-center items-center -z-10 bg-overlay_color`,
-        {
-         "z-50 pointer-events-auto": isOpen,
-        },
-      )}
-    >
-      <motion.div
-        data-testid={"modal-window"}
-        // animate={isOpen ? "open" : "closed"}
-        variants={variants}
-        onClick={(e) => e.stopPropagation()}
-        className={
-          "bg-modal_color dark:bg-modal_color_dark text-black rounded h-52 w-96 opacity-0 p-2"
-        }
-      >
-        {children}
-      </motion.div>
-    </motion.div>
+                  {
+                      'z-50 pointer-events-auto': isOpen,
+                  }
+              )}>
+                  <motion.div
+                      data-testid={"modal-window"}
+                      // animate={isOpen ? "open" : "closed"}
+                      variants={variants}
+                      onClick={(e) => e.stopPropagation()}
+                      className={'bg-modal_color dark:bg-modal_color_dark text-black rounded h-52 w-96 opacity-0 p-2'}>
+                      {children}
+                  </motion.div>
+              </motion.div>
+          </Portal> :
+          <motion.div
+              data-testid={"modal-overlay"}
+              // animate={isOpen ? "open" : "closed"}
+              variants={variants}
+              onClick={clickHandler} className={classNames(`fixed top-0 bottom-0 left-0 right-0
+             flex justify-center items-center -z-10 bg-overlay_color`,
+              {
+                  'z-50 pointer-events-auto': isOpen,
+              }
+          )}>
+              <motion.div
+                  data-testid={"modal-window"}
+                  // animate={isOpen ? "open" : "closed"}
+                  variants={variants}
+                  onClick={(e) => e.stopPropagation()}
+                  className={'bg-modal_color dark:bg-modal_color_dark text-black rounded h-52 w-96 opacity-0 p-2'}>
+                  {children}
+              </motion.div>
+          </motion.div>
   );
 }
 
 export default Modal;
-
-/*
-* !isTest ?
-            <Portal>
-                <motion.div
-                    data-testid={"modal-overlay"}
-                    animate={isOpen ? "open" : "closed"}
-                    variants={variants}
-                    onClick={clickHandler} className={classNames(`fixed top-0 bottom-0 left-0 right-0
-             flex justify-center items-center -z-10 bg-overlay_color`,
-                    {
-                        'z-50 pointer-events-auto': isOpen,
-                    }
-                )}>
-                    <motion.div
-                        data-testid={"modal-window"}
-                        animate={isOpen ? "open" : "closed"}
-                        variants={variants}
-                        onClick={(e) => e.stopPropagation()}
-                        className={'bg-modal_color dark:bg-modal_color_dark text-black rounded h-52 w-96 opacity-0 p-2'}>
-                        {children}
-                    </motion.div>
-                </motion.div>
-            </Portal> :
-            <motion.div
-                data-testid={"modal-overlay"}
-                animate={isOpen ? "open" : "closed"}
-                variants={variants}
-                onClick={clickHandler} className={classNames(`fixed top-0 bottom-0 left-0 right-0
-             flex justify-center items-center -z-10 bg-overlay_color`,
-                {
-                    'z-50 pointer-events-auto': isOpen,
-                }
-            )}>
-                <motion.div
-                    data-testid={"modal-window"}
-                    animate={isOpen ? "open" : "closed"}
-                    variants={variants}
-                    onClick={(e) => e.stopPropagation()}
-                    className={'bg-modal_color dark:bg-modal_color_dark text-black rounded h-52 w-96 opacity-0 p-2'}>
-                    {children}
-                </motion.div>
-            </motion.div>*/

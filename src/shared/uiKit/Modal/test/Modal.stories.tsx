@@ -33,9 +33,9 @@ type Story = StoryObj<typeof meta>;
 export const Modal_Light: Story = {
     args: {
         isOpen: true,
-        // onClose: () => {},
+        onClose: () => {},
         children : "this is modal",
-        // isTest: true,
+        isTest: true,
     },
     decorators: [ThemeDecorator("Bright")]
 };
