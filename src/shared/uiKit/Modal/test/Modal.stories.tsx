@@ -40,7 +40,7 @@ export const Modal_Light: Story = {
     decorators: [ThemeDecorator("Bright")]
 };
 
-/* export const Modal_Dark: Story = {
+ export const Modal_Dark: Story = {
     args: {
         isOpen: true,
         onClose: () => {},
@@ -48,4 +48,4 @@ export const Modal_Light: Story = {
         isTest: true,
     },
     decorators: [ThemeDecorator("Dark")]
-}; */
+};
