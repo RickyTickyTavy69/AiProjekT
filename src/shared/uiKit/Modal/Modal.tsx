@@ -1,22 +1,24 @@
-import React, {useCallback, useEffect, useState} from "react";
-import {Portal} from "../Portal"
-import classNames from "../../lib/classNames/classNames.ts";
-import {motion} from "framer-motion";
+// import React, {useCallback, useEffect, useState} from "react";
+// import {Portal} from "../Portal"
+// import classNames from "../../lib/classNames/classNames.ts";
+// import {motion} from "framer-motion";
 
 
-type ModalProps = {
+/* type ModalProps = {
     isOpen: boolean;
     onClose: () => void;
     children: React.ReactNode;
     lazy?: boolean;
     isTest?: boolean;
-}
+} */
 
-const Modal = ({isOpen = true, onClose, children, lazy = false, isTest = false}: ModalProps) => {
+const Modal = (
+    // {isOpen = true, onClose, children, lazy = false, isTest = false}: ModalProps
+) => {
 
-    const [isMounted, setIsMounted] = useState(false);
+   // const [isMounted, setIsMounted] = useState(false);
 
-    const clickHandler = useCallback( () => {
+    /* const clickHandler = useCallback( () => {
         if(onClose){
             onClose();
         }
@@ -51,10 +53,17 @@ const Modal = ({isOpen = true, onClose, children, lazy = false, isTest = false}:
 
     if(lazy && !isMounted){
         return null;
-    }
+    }*/
 
     return (
-        !isTest ?
+        <div>Test</div>
+    )
+}
+
+export default Modal;
+
+/*
+* !isTest ?
             <Portal>
                 <motion.div
                     data-testid={"modal-overlay"}
@@ -94,8 +103,4 @@ const Modal = ({isOpen = true, onClose, children, lazy = false, isTest = false}:
                     className={'bg-modal_color dark:bg-modal_color_dark text-black rounded h-52 w-96 opacity-0 p-2'}>
                     {children}
                 </motion.div>
-            </motion.div>
-    )
-}
-
-export default Modal;
+            </motion.div>*/

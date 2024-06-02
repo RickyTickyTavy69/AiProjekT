@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import {Modal} from "../index.ts";
-// import {ThemeDecorator} from "../../../config/storybook/ThemeDecorator/ThemeDecorator.tsx";
+import {ThemeDecorator} from "../../../config/storybook/ThemeDecorator/ThemeDecorator.tsx";
 
-const test = () => {
+/* const test = () => {
     return(
         <div>test</div>
     )
-}
+} */
 
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
     title: 'uiKit/Modal',
-    component: test,
+    component: Modal,
     parameters: {
         // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
         layout: 'centered',
@@ -33,9 +33,9 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 
-export const Test: Story = {}
+// export const Test: Story = {}
 
-/* export const Modal_Light: Story = {
+export const Modal_Light: Story = {
     args: {
         isOpen: true,
         onClose: () => {},
@@ -43,7 +43,7 @@ export const Test: Story = {}
         isTest: true,
     },
     decorators: [ThemeDecorator("Bright")]
-}; */
+};
 
 /* export const Modal_Dark: Story = {
     args: {
