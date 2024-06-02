@@ -19,11 +19,6 @@ const meta = {
     },
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ['autodocs'],
-    argTypes: {
-        isOpen: { control: 'boolean' },
-        children: { control: 'text' },
-        onClose: { control: 'text' },
-    }
     // More on argTypes: https://storybook.js.org/docs/api/argtypes
 } satisfies Meta<typeof Modal>;
 
@@ -38,9 +33,9 @@ type Story = StoryObj<typeof meta>;
 export const Modal_Light: Story = {
     args: {
         isOpen: true,
-        onClose: () => {},
+        // onClose: () => {},
         children : "this is modal",
-        isTest: true,
+        // isTest: true,
     },
     decorators: [ThemeDecorator("Bright")]
 };
