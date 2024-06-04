@@ -10,10 +10,10 @@ import {loginActions, loginReducer} from "../../model/slice/LoginSlice.ts";
 import {LoginByUserName} from "../../model/services/LoginByUserName/LoginByUserName.ts";
 
 import {AppDispatch} from "../../../../app/providers/StoreProvider/config/store.ts";
-import {getLoginUsername} from "../../model/selectors/getLoginState/getLoginUsername.ts";
-import {getLoginPassword} from "../../model/selectors/getLoginState/getLoginPassword.ts";
-import {getLoginIsLoading} from "../../model/selectors/getLoginState/getLoginIsLoading.ts";
-import {getLoginError} from "../../model/selectors/getLoginState/getLoginError.ts";
+import {getLoginUsername} from "../../model/selectors/getLoginState/getLoginUsername/getLoginUsername.ts";
+import {getLoginPassword} from "../../model/selectors/getLoginState/getLoginPassword/getLoginPassword.ts";
+import {getLoginIsLoading} from "../../model/selectors/getLoginState/getLoginIsLoading/getLoginIsLoading.ts";
+import {getLoginError} from "../../model/selectors/getLoginState/getLoginError/getLoginError.ts";
 
 import DynamicModuleImport from "../../../../shared/lib/components/DynamicModuleImport/DynamicModuleImport.tsx";
 

@@ -15,7 +15,7 @@ export const LoginByUserName = createAsyncThunk<User, AuthData>(
     "auth/loginByUserName",
     async (authData, thunkAPI) => {
         try{
-            const response = await axios.post("http://localhost:8000/login", authData);
+            const response = await axios.post<User>("http://localhost:8000/login", authData);
             if(!response.data){
                 console.log("no data");
                 return thunkAPI.rejectWithValue(i18n.t("wrong login data, please try again"));
