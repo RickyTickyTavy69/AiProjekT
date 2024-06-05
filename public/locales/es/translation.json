@@ -1,8 +1,8 @@
 {
-  "Profile": "Perfil",
+  "profile": "Perfil",
   "Menu": "Menú",
-  "Main": "Principal",
-  "Create": "Crear",
+  "main": "Principal",
+  "create": "Crear",
   "Ai Image Creator": "generador de imágenes AI",
   "close" : "cerrar",
   "open" : "abrir",

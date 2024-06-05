@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from "react";
+import React, {memo, useCallback, useEffect, useState} from "react";
 import { useTranslation } from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
 
@@ -12,7 +12,7 @@ import { User } from "../../../entities/User";
 import {userActions} from "../../../entities/User";
 import {loginActions} from "../../../features/AuthByUserName";
 
-const Navbar = (): React.ReactNode => {
+const Navbar = memo((): React.ReactNode => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const { t } = useTranslation();
   const user: User | undefined = useSelector(getAuthData);
@@ -74,6 +74,6 @@ const Navbar = (): React.ReactNode => {
       )}
     </>
   );
-};
+});
 
 export default Navbar;

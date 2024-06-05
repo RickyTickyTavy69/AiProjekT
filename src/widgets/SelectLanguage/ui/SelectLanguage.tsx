@@ -1,7 +1,7 @@
-import { type ChangeEvent, type JSX } from 'react'
+import {type ChangeEvent, type JSX, memo} from 'react'
 import { useTranslation } from 'react-i18next'
 
-const SelectLanguage = ({short}: {short: boolean}): JSX.Element => {
+const SelectLanguage = memo(({short}: {short: boolean}): JSX.Element => {
   const languages = ['en-US', 'es-ES', 'ru-RU']
   const choosenLanguage = localStorage.getItem('language')
 
@@ -26,6 +26,6 @@ const SelectLanguage = ({short}: {short: boolean}): JSX.Element => {
         </>
 
   )
-}
+});
 
 export default SelectLanguage

@@ -1,7 +1,7 @@
 import {lazy} from "react";
 
 const LoginForm = lazy(
-    () => import("./LoginForm.tsx")
+    async () => await import("./LoginForm.tsx")
 );
 
 export default LoginForm;

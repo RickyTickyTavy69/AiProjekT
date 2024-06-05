@@ -25,5 +25,12 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "name": "Artem",
+    "lastName": "Bakirov",
+    "age": 28,
+    "city": "Moscow",
+    "country": "Russia",
+    "username": "RickyTickyTavy"
+  }
 }

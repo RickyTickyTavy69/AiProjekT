@@ -1,8 +1,8 @@
 {
-  "Profile": "Profile",
+  "profile": "Profile",
   "Menu": "Menu",
-  "Main": "Main",
-  "Create": "Create",
+  "main": "Main",
+  "create": "Create",
   "Ai Image Creator": "Ai Image Creator",
   "close" : "close",
   "open" : "open",

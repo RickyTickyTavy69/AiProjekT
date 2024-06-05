@@ -1,11 +1,9 @@
-import { type JSX, useState } from 'react'
+import {type JSX, memo, useState} from 'react'
 import Button from '../../../../shared/uiKit/Button/Button.tsx'
-import { useTranslation } from 'react-i18next'
 import {NavLinkButton} from "../../../../shared/uiKit/NavLinkButton";
-import {RoutePaths} from "../../../../shared/config/routeConfig/RouterTypes.ts";
 
-const Sidebar = (): JSX.Element => {
-  const { t } = useTranslation();
+
+const Sidebar = memo((): JSX.Element => {
 
   const [opened, setOpened] = useState<boolean>(false);
 
@@ -23,12 +21,12 @@ const Sidebar = (): JSX.Element => {
           </div>
 
           <div className={'flex flex-col items-center gap-6 py-8'}>
-                  <NavLinkButton showTitle={opened} icon={"profile"} to={RoutePaths.profile}>{t('Profile')}</NavLinkButton>
-                  <NavLinkButton showTitle={opened} icon={"ai_art"} to={RoutePaths.create}>{t('Create')}</NavLinkButton>
-                  <NavLinkButton showTitle={opened} icon={"home"} to={RoutePaths.main}>{t('Main')}</NavLinkButton>
+                  <NavLinkButton showTitle={opened} to={"profile"}/>
+                  <NavLinkButton showTitle={opened} to={"create"}/>
+                  <NavLinkButton showTitle={opened} to={"main"}/>
           </div>
       </div>
   )
-}
+})
 
 export default Sidebar

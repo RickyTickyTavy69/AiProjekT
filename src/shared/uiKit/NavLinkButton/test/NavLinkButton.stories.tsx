@@ -26,7 +26,7 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const NavLinkButton_Light: Story = {
     args: {
-        to: "/",
+        to: "main",
         children: "NavLink Light"
     },
     decorators: [ThemeDecorator("Bright"), RouterDecorator()]
@@ -34,7 +34,7 @@ export const NavLinkButton_Light: Story = {
 
 export const NavLinkButton_Dark: Story = {
     args: {
-        to: "/",
+        to: "main",
         children: "NavLink Dark"
     },
     decorators: [ThemeDecorator("Dark"), RouterDecorator()]

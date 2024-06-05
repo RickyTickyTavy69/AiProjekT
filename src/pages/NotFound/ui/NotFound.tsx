@@ -13,8 +13,8 @@ const NotFound = (): React.ReactNode => {
           <p className={'flex gap-2'}>
               {t('looks, like this page does not exist. Go back to the')}
               <NavLinkButton
-                  to={'/'}
-              >{t('Main Page')}</NavLinkButton>
+                  to={'main'}
+              />
           </p>
       </nav>
 

@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React, {memo, useEffect} from 'react'
 import { useTheme } from '../index'
 import Icon from 'src/shared/assets/theme-switch.svg?react';
 
-const Theme = (): React.ReactNode => {
+const Theme = memo((): React.ReactNode => {
   const { theme, handleThemeSwitch } = useTheme()
 
   useEffect(() => {
@@ -12,6 +12,6 @@ const Theme = (): React.ReactNode => {
   return (
             <Icon onClick={handleThemeSwitch} className={'cursor-pointer h-7 w-7 hover:h-8 hover:w-8'} />
   )
-}
+});
 
 export default Theme
