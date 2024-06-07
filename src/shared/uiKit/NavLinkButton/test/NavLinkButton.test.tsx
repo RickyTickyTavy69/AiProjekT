@@ -7,9 +7,9 @@ import { expect, test } from 'vitest'
 describe('test NavLinkButton', () => {
     test("should render the NavLinkButton correctly", () => {
         Render(
-            <NavLinkButton to={"main"}>Link</NavLinkButton>
+            <NavLinkButton to={"main"}></NavLinkButton>
         );
 
-        expect(screen.getByText("Link")).toBeInTheDocument();
+        expect(screen.getByText("main")).toBeInTheDocument();
     })
 })
