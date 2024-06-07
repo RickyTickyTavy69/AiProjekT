@@ -9,7 +9,7 @@ import {Text} from "../../../../shared/uiKit/Text";
 import {loginActions, loginReducer} from "../../model/slice/LoginSlice.ts";
 import {LoginByUserName} from "../../model/services/LoginByUserName/LoginByUserName.ts";
 
-import {AppDispatch} from "../../../../app/providers/StoreProvider/config/store.ts";
+import {AppDispatch} from "../../../../app/providers/StoreProvider";
 import {getLoginUsername} from "../../model/selectors/getLoginState/getLoginUsername/getLoginUsername.ts";
 import {getLoginPassword} from "../../model/selectors/getLoginState/getLoginPassword/getLoginPassword.ts";
 import {getLoginIsLoading} from "../../model/selectors/getLoginState/getLoginIsLoading/getLoginIsLoading.ts";

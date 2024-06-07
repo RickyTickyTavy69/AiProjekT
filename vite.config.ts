@@ -51,5 +51,10 @@ export default defineConfig(({command, mode}) => {
             environment: 'jsdom',
             setupFiles: './config/vitest/setupTests.ts'
         },
+        define: {
+            // can add BaseUrl param here while building the app, depending on the mode
+            // __DEV__: import.meta.env.DEV,
+            // "import.meta" is not available with the "cjs" output format and will be empty [empty-import-meta] - should fix this error
+        }
     }
 })

@@ -1,8 +1,8 @@
 import axios from "axios";
 import {vi} from "vitest";
-import {LoginByUserName} from "./LoginByUserName.ts";
-import {userActions} from "../../../../../entities/User";
-import {TestAsyncThunk} from "../../../../../shared/lib/tests/TestAsyncThunk/TestAsyncThunk.ts";
+import {AuthData, LoginByUserName} from "./LoginByUserName.ts";
+import {User, userActions} from "../../../../../entities/User";
+import {ActionCreatorType, TestAsyncThunk} from "../../../../../shared/lib/tests/TestAsyncThunk/TestAsyncThunk.ts";
 
 describe("LoginByUserName tests", () => {
     vi.mock("axios");
@@ -14,7 +14,9 @@ describe("LoginByUserName tests", () => {
 
         mockedAxios.post.mockResolvedValue(Promise.resolve({data: userValue}));
 
-        const thunk = new TestAsyncThunk(LoginByUserName);
+        const thunk = new TestAsyncThunk(
+          LoginByUserName as ActionCreatorType<User, AuthData, string>
+        );
         const result = await thunk.callThunk({username: "testName", password: "123"})
 
         expect(result.meta.requestStatus).toEqual("fulfilled");
@@ -31,7 +33,7 @@ describe("LoginByUserName tests", () => {
 
         mockedAxios.post.mockResolvedValue(Promise.resolve({status: 403}));
 
-        const thunk = new TestAsyncThunk(LoginByUserName);
+        const thunk = new TestAsyncThunk(LoginByUserName as ActionCreatorType<User, AuthData, string>);
         const result = await thunk.callThunk({username: "testName", password: "123"})
 
         expect(result.meta.requestStatus).toEqual("rejected");

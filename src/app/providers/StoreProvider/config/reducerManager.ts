@@ -1,10 +1,17 @@
 import {Action, combineReducers, Reducer, ReducersMapObject} from "@reduxjs/toolkit";
 import {StateSchema} from "./StateSchema.ts";
 import {StateSchemaKey} from "./StateSchema.ts";
+import {UserSchema} from "../../../../entities/User";
 
 export function createReducerManager(initialReducers: ReducersMapObject<StateSchema>) {
 
     const reducers = { ...initialReducers }
+
+    type Reducers = {
+        user: UserSchema;
+        login?: undefined;
+        profile?: undefined;
+    }
 
 
     let combinedReducer = combineReducers(reducers);
@@ -16,6 +23,8 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
         getReducerMap: () => reducers,
 
 
+
+
         reduce: (state: StateSchema, action: Action) => {
             if (keysToRemove.length > 0) {
                 state = { ...state }
@@ -25,7 +34,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
                 keysToRemove = []
             }
             // eslint-expect-error
-            return combinedReducer(state, action)
+            return combinedReducer(state as Reducers, action)
         },
 
         add: (key: StateSchemaKey, reducer: Reducer) => {

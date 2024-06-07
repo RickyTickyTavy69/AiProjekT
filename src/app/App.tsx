@@ -22,8 +22,9 @@ import {StoreProvider} from "./providers/StoreProvider";
 
 const App = (): JSX.Element => {
   return (
-      <StoreProvider>
+
         <BrowserRouter>
+            <StoreProvider>
             <Language/>
             <ThemeProvider>
                 <Suspense fallback={<PageLoader/>}>
@@ -32,8 +33,9 @@ const App = (): JSX.Element => {
                     </ErrorBoundary>
                 </Suspense>
             </ThemeProvider>
+            </StoreProvider>
         </BrowserRouter>
-      </StoreProvider>
+
   )
 }
 
