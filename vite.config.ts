@@ -53,8 +53,7 @@ export default defineConfig(({command, mode}) => {
         },
         define: {
             // can add BaseUrl param here while building the app, depending on the mode
-            // __DEV__: import.meta.env.DEV,
-            // "import.meta" is not available with the "cjs" output format and will be empty [empty-import-meta] - should fix this error
+             __DEV__: (mode === "development"),
         }
     }
 })
