@@ -1,37 +1,90 @@
-import {useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {AppDispatch} from "../../../app/providers/StoreProvider";
-import {fetchProfileData} from "../model/services/FetchProfileData/fetchProfileData.ts";
-import {getProfileData} from "../model/selectors/getProfileData/getProfileData.ts";
-import {Text} from "../../../shared/uiKit/Text";
+import { Text } from "../../../shared/uiKit/Text";
+import { ProfileSchema } from "../index.ts";
 
-const ProfileCard = () => {
+import { Input } from "../../../shared/uiKit/Input";
+import Image from "../../../shared/uiKit/Image/Image.tsx";
 
-    const dispatch = useDispatch<AppDispatch>();
-    const data = useSelector(getProfileData);
+const ProfileCard = ({
+  profileForm,
 
-    // console.log("data is", data);
+  readonly,
+  onHandleChange,
+}: Omit<ProfileSchema, "user"> & {
+  onHandleChange: (value: string, name: string) => void;
+}) => {
+  console.log("profile form", profileForm);
 
-    useEffect(() => {
-        dispatch(fetchProfileData());
-    }, [dispatch]);
-
-
-    return (
-      <div className={"border-black dark:border-white rounded p-2"}>
-          <div className={"flex gap-2"}>
-            <div className={"flex flex-col gap-1"}>
-              <Text title={"your credentials:"} />
-              {data &&
-                <div>
-                  <div>{data.name}</div>
-                  <div>{data.lastName}</div>
-                </div>
-              }
+  return (
+    <div className={"border-black dark:border-white border-2 rounded px-2"}>
+      <div className={"flex gap-2"}>
+        <div className={"flex flex-col gap-1"}>
+          <Text title={"your credentials:"} />
+          {profileForm.lastName && profileForm.name && (
+            <div>
+              <Input
+                placeholder={"your name"}
+                onChange={onHandleChange}
+                readonly={readonly}
+                value={profileForm.name}
+                name={"name"}
+              />
+              <Input
+                placeholder={"your lastname"}
+                onChange={onHandleChange}
+                readonly={readonly}
+                value={profileForm.lastName}
+                name={"lastName"}
+              />
+              <Input
+                placeholder={"username"}
+                onChange={onHandleChange}
+                readonly={readonly}
+                value={profileForm.username}
+                name={"username"}
+              />
+              <Input
+                placeholder={"age"}
+                onChange={onHandleChange}
+                readonly={readonly}
+                value={profileForm.age}
+                name={"age"}
+              />
+              <Input
+                placeholder={"city"}
+                onChange={onHandleChange}
+                readonly={readonly}
+                value={profileForm.city}
+                name={"city"}
+              />
+              <Input
+                placeholder={"country"}
+                onChange={onHandleChange}
+                readonly={readonly}
+                value={profileForm.country}
+                name={"country"}
+              />
+              <div>
+                <div>Avatar:</div>
+                {readonly ? (
+                  <Image size={"XL"} src={profileForm.avatar} />
+                ) : (
+                    <>
+                      <Input
+                          placeholder={"enter avatar url"}
+                          onChange={onHandleChange}
+                          value={profileForm.avatar}
+                          name={"avatar"}
+                      />
+                      <Image size={"XL"} src={profileForm.avatar} />
+                    </>
+                )}
+              </div>
             </div>
-          </div>
+          )}
+        </div>
       </div>
-    );
-}
+    </div>
+  );
+};
 
 export default ProfileCard;

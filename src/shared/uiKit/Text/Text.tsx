@@ -1,10 +1,10 @@
-type TextColor = "primary" | "error" | "warning";
+import {ThemeColor} from "../common.types.ts";
 import classNames from "../../lib/classNames/classNames.ts";
 
 type TextProps = {
   title?: string;
   text?: string;
-  color?: TextColor;
+  color?: ThemeColor;
 };
 
 const Text = ({ title, text, color = "primary" }: TextProps) => {

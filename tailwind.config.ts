@@ -14,6 +14,7 @@ export default {
                 gray: '#E5E7EB',
                 error: '#f44646',
                 warning: '#f4a646',
+                success: '#46f446',
                 overlay_color: 'rgba(24,24,27,0.6)',
                 overlay_color_bright: 'rgba(24,24,27,0.6)',
                 modal_color_dark: '#44444a',
