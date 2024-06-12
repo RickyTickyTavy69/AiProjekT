@@ -7,6 +7,8 @@ import { Main } from '../../../pages/Main.tsx'
 import NotFound from '../../../pages/NotFound/ui/NotFound'
 import { PageLoader } from 'src/widgets/PageLoader'
 
+import PrivateRouteWrapper from "../../routerWrappers/PrivateRouteWrapper.tsx";
+
 import {RoutePaths} from "./RouterTypes.ts";
 
 
@@ -26,9 +28,11 @@ export const RouteConfig: RouteProps[] = [
   {
     path: RoutePaths.profile,
     element: (
-      <Suspense fallback={<PageLoader/>}>
-        <LazyProfile />
-      </Suspense>
+        <PrivateRouteWrapper>
+          <Suspense fallback={<PageLoader/>}>
+            <LazyProfile />
+          </Suspense>
+        </PrivateRouteWrapper>
     )
   },
   {

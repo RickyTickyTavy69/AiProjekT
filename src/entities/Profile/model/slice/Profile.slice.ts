@@ -23,6 +23,7 @@ const initialState: ProfileSchema = {
     error: "",
     isLoading: false,
     readonly: true,
+    validationError: null,
 }
 
 const ProfileSlice = createSlice({
@@ -40,15 +41,20 @@ const ProfileSlice = createSlice({
         },
         cancelEditing(state) {
             state.profileForm = state.user;
+            state.readonly = true;
         },
         applyChanges(state) {
-            state.user = state.profileForm;
+            console.log("valid error apply changes", state.validationError);
+            if(!state.validationError){
+                state.user = state.profileForm;
+                state.readonly = true;
+            }
         }
     },
     extraReducers: (builder : ActionReducerMapBuilder<ProfileSchema>) => {
         builder.addCase(fetchProfileData.fulfilled, (state, action) => {
             state.isLoading = false;
-            state.error = "";
+            state.validationError = "";
             state.user = action.payload;
             state.profileForm = action.payload;
         })
@@ -58,13 +64,13 @@ const ProfileSlice = createSlice({
             })
             .addCase(fetchProfileData.rejected, (state, action) => {
                 state.isLoading = false;
-                state.error = action.payload;
+                state.validationError = action.payload;
             })
             .addCase(updateProfileData.fulfilled, (state) => {
             state.isLoading = false;
             state.error = "";
-            // state.user = action.payload;
-            // state.profileForm = action.payload;
+            state.readonly = true;
+            state.user = state.profileForm;
              })
             .addCase(updateProfileData.pending, (state) => {
                 state.isLoading = true;
@@ -72,7 +78,8 @@ const ProfileSlice = createSlice({
             })
             .addCase(updateProfileData.rejected, (state, action) => {
                 state.isLoading = false;
-                state.error = action.payload;
+                // console.log("rejected action payload", action.payload);
+                state.validationError = action.payload;
             })
 
     }

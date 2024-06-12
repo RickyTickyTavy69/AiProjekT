@@ -6,20 +6,18 @@ import Image from "../../../shared/uiKit/Image/Image.tsx";
 
 const ProfileCard = ({
   profileForm,
-
   readonly,
   onHandleChange,
 }: Omit<ProfileSchema, "user"> & {
   onHandleChange: (value: string, name: string) => void;
 }) => {
-  console.log("profile form", profileForm);
 
   return (
     <div className={"border-black dark:border-white border-2 rounded px-2"}>
       <div className={"flex gap-2"}>
         <div className={"flex flex-col gap-1"}>
           <Text title={"your credentials:"} />
-          {profileForm.lastName && profileForm.name && (
+          {profileForm &&
             <div>
               <Input
                 placeholder={"your name"}
@@ -80,7 +78,7 @@ const ProfileCard = ({
                 )}
               </div>
             </div>
-          )}
+          }
         </div>
       </div>
     </div>

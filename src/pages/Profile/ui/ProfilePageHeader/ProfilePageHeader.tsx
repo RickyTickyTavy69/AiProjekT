@@ -8,12 +8,10 @@ import {profileActions} from "../../../../entities/Profile/model/slice/Profile.s
 import {updateProfileData} from "../../../../entities/Profile/model/services/UpdateProfileData/updateProfileData.ts";
 import {getProfileReadOnly} from "../../../../entities/Profile/model/selectors/getProfileReadonly/getProfileReadOnly";
 
-
 const ProfilePageHeader = () => {
 
     const dispatch = useDispatch<AppDispatch>();
     const readonly = useSelector(getProfileReadOnly);
-
 
     const editProfile = () => {
         dispatch(profileActions.changeReadonlyState());
@@ -21,12 +19,9 @@ const ProfilePageHeader = () => {
 
     const handleCancel = () => {
         dispatch(profileActions.cancelEditing());
-        dispatch(profileActions.changeReadonlyState());
     }
 
     const applyChanges = () => {
-        dispatch(profileActions.applyChanges());
-        dispatch(profileActions.changeReadonlyState());
         dispatch(updateProfileData())
     }
 

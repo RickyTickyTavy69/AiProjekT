@@ -1,8 +1,6 @@
-import {type JSX, useEffect} from 'react'
+import {type JSX} from 'react'
 import { Outlet } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import {useDispatch} from "react-redux";
-import {userActions} from "../entities/User";
 
 import classNames from '../shared/lib/classNames/classNames.ts'
 import { Navbar } from '../widgets/Navbar'
@@ -11,11 +9,6 @@ import Sidebar from '../widgets/Sidebar/ui/Sidebar/Sidebar.tsx'
 
 export const Main = (): JSX.Element => {
   const { t } = useTranslation()
-
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(userActions.getUserFromLocalStorage())
-    }, [dispatch])
 
   return (
         <div>

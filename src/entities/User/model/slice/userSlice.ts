@@ -7,7 +7,8 @@ const initialState: UserSchema = {
     authData:{
         username: "",
         id: "",
-    }
+    },
+    isLoading: true,
 }
 
 export const userSlice = createSlice({
@@ -27,6 +28,7 @@ export const userSlice = createSlice({
             if(User){
                 state.authData = JSON.parse(User);
             }
+            state.isLoading = false;
         }
     }
 })

@@ -49,7 +49,7 @@ export default defineConfig(({command, mode}) => {
         test: {
             globals: true,
             environment: 'jsdom',
-            setupFiles: './config/vitest/setupTests.ts'
+            setupFiles: './setupTests.ts'
         },
         define: {
             // can add BaseUrl param here while building the app, depending on the mode

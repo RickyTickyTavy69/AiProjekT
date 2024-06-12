@@ -1,9 +1,8 @@
+// actually, useTheme is in the widgets and Input is in the shared layer, so I am not supposed to use it here, it should also
+// be in the shared layer to use it in the shared layer
 import {ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef, useState} from "react";
 import {useTheme} from "../../../widgets/ThemeSwitcher";
 import classNames from "../../lib/classNames/classNames.ts";
-// actually, useTheme is in the widgets and Input is in the shared layer, so I am not supposed to use it here, it should also
-// be in the shared layer to use it in the shared layer
-
 
 type InputHTMLProps = Omit<InputHTMLAttributes<HTMLInputElement>, "onChange" | "value">;
 
@@ -74,7 +73,7 @@ const Input = memo((props : InputProps) => {
                             textShadow: theme === "Dark" ? '0 0 0 #dec8c8': '0 0 0 #18181B',
                         }}
                         className={classNames(
-                            "focus:outline-none bg-transparent font-mono border-2 border-white overflow-hidden",
+                            "focus:outline-none bg-transparent font-mono overflow-hidden",
                             )}
                         {...rest}
                         onChange={handleChange}

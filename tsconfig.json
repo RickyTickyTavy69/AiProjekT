@@ -27,7 +27,6 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src",
-    "config/vitest/setupTests.ts",
     "vite.config.ts",
     "client.d.ts"
   ],

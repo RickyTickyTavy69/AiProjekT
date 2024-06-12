@@ -14,4 +14,5 @@ export type ProfileSchema = {
     isLoading: boolean,
     error?: string,
     readonly : boolean,
+    validationError?: string | null,
 }
