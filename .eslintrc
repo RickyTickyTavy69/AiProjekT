@@ -24,7 +24,7 @@
     "browser": true,
     "es2020": true
   },
-  "ignorePatterns": ["postcss.config.ts", "tailwind.config.ts", "json-server/index.js", "setupTests.ts"],
+  "ignorePatterns": ["postcss.config.ts", "tailwind.config.ts", "json-server/index.js", "setupTests.ts", "vite.config.ts"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/display-name": "off"

@@ -10,6 +10,7 @@ interface ButtonProps {
   reverseTheme?: boolean;
   disabled?: boolean;
   color?: ThemeColor;
+  type?: "submit";
 }
 
 const Button = ({
@@ -18,10 +19,12 @@ const Button = ({
   size = "M",
   disabled = false,
   color = "primary",
+    type,
 }: ButtonProps): JSX.Element => {
   return (
-    <div
+    <button
       onClick={onClick}
+      type={type}
       data-testid={"button"}
       className={classNames(
         `text-center w-fit h-fit cursor-pointer text-black dark:text-white`,
@@ -40,7 +43,7 @@ const Button = ({
       )}
     >
       {title}
-    </div>
+    </button>
   );
 };
 

@@ -13,7 +13,6 @@ type ModalProps = {
     onClose: () => void;
     children: React.ReactNode;
     lazy?: boolean;
-    isTest?: boolean;
 }
 
 const Modal = (
@@ -22,7 +21,6 @@ const Modal = (
         onClose,
         children,
         lazy = false,
-        isTest = false,
     }: ModalProps
 ) => {
     const [isMounted, setIsMounted] = useState(false);
@@ -64,8 +62,10 @@ const Modal = (
         return null;
     }
 
+    console.log("project", __PROJECT__);
+
   return (
-      !isTest ?
+      __PROJECT__ === "frontend" ?
           <Portal>
               <motion.div
                   data-testid={"modal-overlay"}

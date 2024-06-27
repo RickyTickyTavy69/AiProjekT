@@ -1,11 +1,10 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
-import { defineConfig } from 'vitest/config'
+import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import eslintPlugin from 'vite-plugin-eslint'
 import svgr from "vite-plugin-svgr";
 import { analyzer } from "vite-bundle-analyzer";
-
 
 export default defineConfig(({command, mode}) => {
 
@@ -55,7 +54,7 @@ export default defineConfig(({command, mode}) => {
         define: {
             // can add BaseUrl param here while building the app, depending on the mode
              __DEV__: (mode === "development"),
-             __PROJECT__: JSON.stringify("frontend"),
+            __PROJECT__: JSON.stringify("storybook"),
         }
     }
 })
