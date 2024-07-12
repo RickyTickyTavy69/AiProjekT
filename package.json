@@ -24,6 +24,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "axios": "^1.6.8",
     "babel-plugin-i18next-extract": "^0.10.0",
+    "babel-plugin-react-compiler": "^0.0.0-experimental-696af53-20240625",
     "cross-env": "^7.0.3",
     "framer-motion": "^11.1.7",
     "i18next": "^23.10.0",

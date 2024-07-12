@@ -1,22 +1,19 @@
-import { Suspense } from 'react'
-import { type RouteProps } from 'react-router-dom'
+import { Suspense } from 'react';
+import { type RouteProps } from 'react-router-dom';
 
-import LazyCreate from '@/pages/Create/ui/Create.async.tsx'
-import LazyProfile from '@/pages/Profile/ui/Profile.async'
-import { Main } from '@/pages/Main.tsx'
-import NotFound from '@/pages/NotFound/ui/NotFound'
-import { PageLoader } from '@/widgets/PageLoader'
+import LazyCreate from '@/pages/Create/ui/Create.async.tsx';
+import LazyProfile from '@/pages/Profile/ui/Profile.async';
+import NotFound from '@/pages/NotFound/ui/NotFound';
+import { PageLoader } from '@/widgets/PageLoader';
 
 import PrivateRouteWrapper from "../../routerWrappers/PrivateRouteWrapper.tsx";
 
 import {RoutePaths} from "./RouterTypes.ts";
+import {ArtDetails} from "@/pages/ArtDetails";
+import {ArtCollection} from "@/pages/ArtCollection";
 
 
 export const RouteConfig: RouteProps[] = [
-  {
-    path: RoutePaths.list,
-    element: <Main />
-  },
   {
     path: RoutePaths.create,
     element: (
@@ -36,8 +33,24 @@ export const RouteConfig: RouteProps[] = [
     )
   },
   {
-    path: RoutePaths.search,
-    element: <Main />
+    path: RoutePaths.artDetails,
+    element: (
+        <PrivateRouteWrapper>
+          <Suspense fallback={<PageLoader/>}>
+            <ArtDetails />
+          </Suspense>
+        </PrivateRouteWrapper>
+    )
+  },
+  {
+    path: RoutePaths.artCollection,
+    element: (
+        <PrivateRouteWrapper>
+          <Suspense fallback={<PageLoader/>}>
+          <ArtCollection />
+          </Suspense>
+        </PrivateRouteWrapper>
+    )
   },
   {
     path: RoutePaths.notFound,

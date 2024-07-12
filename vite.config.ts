@@ -29,13 +29,21 @@ export default defineConfig(({command, mode}) => {
                 exclude: [],
             }),
         ]: [
-            react(),
+            react(
+                {
+                    babel: {
+                        plugins: [
+                            ["babel-plugin-react-compiler", {}]
+                        ],
+                    },
+                }
+            ),
             svgr(),
             eslintPlugin({
                 cache: false,
                 include: ['./src/**/*.js', './src/**/*.jsx'],
                 exclude: [],
-            }),
+            })
         ],
         resolve: {
             alias: {

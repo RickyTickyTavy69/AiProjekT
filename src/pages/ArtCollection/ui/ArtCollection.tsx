@@ -1,14 +1,7 @@
 import {memo} from "react";
 
-type ArtCollectionProps = {
-    userId: string;
-}
+const ArtCollection = memo((): JSX.Element => {
 
-const ArtCollection = memo(({
-    userId,
-                            }: ArtCollectionProps): JSX.Element => {
-
-    console.log(userId);
 
   return (
         <>
