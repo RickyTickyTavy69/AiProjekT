@@ -2,15 +2,15 @@ import React, {memo, useCallback, useEffect, useState} from "react";
 import { useTranslation } from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
 
-import { SelectLanguage } from "src/widgets/SelectLanguage";
-import { Theme } from "src/widgets/ThemeSwitcher";
-import { Button } from "../../../shared/uiKit/Button";
+import { SelectLanguage } from "@/widgets/SelectLanguage";
+import { Theme } from "@/widgets/ThemeSwitcher";
+import { Button } from "@/shared/uiKit/Button";
 
-import { LoginModal } from "../../../features/AuthByUserName";
-import { getAuthData } from "../../../entities/User/model/selectors/getAuthData/getAuthData.ts";
-import { User } from "../../../entities/User";
-import {userActions} from "../../../entities/User";
-import {loginActions} from "../../../features/AuthByUserName";
+import { LoginModal } from "@/features/AuthByUserName";
+import { getAuthData } from "@/entities/User/model/selectors/getAuthData/getAuthData.ts";
+import { User } from "@/entities/User";
+import {userActions} from "@/entities/User";
+import {loginActions} from "@/features/AuthByUserName";
 
 const Navbar = memo((): React.ReactNode => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);

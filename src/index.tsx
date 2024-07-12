@@ -1,6 +1,6 @@
 import App from './app/App'
 import { createRoot } from 'react-dom/client'
-import 'src/shared/config/i18n'
+import '@/shared/config/i18n'
 import {BrowserRouter} from "react-router-dom";
 import {StoreProvider} from "./app/providers/StoreProvider";
 

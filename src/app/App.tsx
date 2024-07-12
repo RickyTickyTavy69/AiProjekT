@@ -7,12 +7,12 @@ import './main.css'
 
 
 import { ThemeProvider } from './providers/ThemeProvider'
-import { AppRouter } from 'src/app/providers/Router'
-import Language from 'src/app/providers/i18n/ui/Language'
-import { PageLoader } from 'src/widgets/PageLoader'
-import ErrorFallback from "src/widgets/ErrorFallback/ui/ErrorFallback.tsx";
+import { AppRouter } from '@/app/providers/Router'
+import Language from '@/app/providers/i18n/ui/Language'
+import PageLoader from "@/widgets/PageLoader/ui/PageLoader.tsx";
+import ErrorFallback from "@/widgets/ErrorFallback/ui/ErrorFallback.tsx";
 import {useDispatch} from "react-redux";
-import {userActions} from "../entities/User";
+import {userActions} from "@/entities/User";
 
 const App = (): JSX.Element => {
 

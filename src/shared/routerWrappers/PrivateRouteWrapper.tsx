@@ -1,8 +1,8 @@
 import React, {useEffect, useMemo} from "react";
 import {useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
-import {getAuthData} from "../../entities/User/model/selectors/getAuthData/getAuthData.ts";
-import {getIsAuthDataLoading} from "../../entities/User/model/selectors/getAuthData/getIsAuthDataLoading.ts";
+import {getAuthData} from "@/entities/User/model/selectors/getAuthData/getAuthData.ts";
+import {getIsAuthDataLoading} from "@/entities/User/model/selectors/getAuthData/getIsAuthDataLoading.ts";
 
 const PrivateRouteWrapper = ({children}: {children: React.ReactNode}) => {
 

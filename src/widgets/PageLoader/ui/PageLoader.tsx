@@ -1,8 +1,10 @@
-import SVG from '../lib/spinner.svg?react'
+import SVG from '../lib/icecat.svg?react'
+import {Text} from "@/shared/uiKit/Text";
 const PageLoader = (): JSX.Element => {
   return (
-      <div>
-          <SVG height={'100px'} width={'100px'}/>
+      <div className={'flex flex-col items-center'}>
+          <SVG color={'currentColor'} height={'400px'} width={'400px'}/>
+          <Text title={'AI PROJECT'}></Text>
       </div>
   )
 }

@@ -1,11 +1,11 @@
 import { Suspense } from 'react'
 import { type RouteProps } from 'react-router-dom'
 
-import LazyCreate from '../../../pages/Create/ui/Create.async.tsx'
-import LazyProfile from '../../../pages/Profile/ui/Profile.async'
-import { Main } from '../../../pages/Main.tsx'
-import NotFound from '../../../pages/NotFound/ui/NotFound'
-import { PageLoader } from 'src/widgets/PageLoader'
+import LazyCreate from '@/pages/Create/ui/Create.async.tsx'
+import LazyProfile from '@/pages/Profile/ui/Profile.async'
+import { Main } from '@/pages/Main.tsx'
+import NotFound from '@/pages/NotFound/ui/NotFound'
+import { PageLoader } from '@/widgets/PageLoader'
 
 import PrivateRouteWrapper from "../../routerWrappers/PrivateRouteWrapper.tsx";
 

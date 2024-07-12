@@ -1,6 +1,6 @@
-import { LOCAL_STORAGE_THEME_KEY, type ThemeType } from 'src/app/providers/ThemeProvider/ui/ThemeProvider'
+import { LOCAL_STORAGE_THEME_KEY, type ThemeType } from '@/app/providers/ThemeProvider/ui/ThemeProvider'
 import { useContext } from 'react'
-import { ThemeContext } from 'src/app/providers/ThemeProvider/ui/ThemeProvider'
+import { ThemeContext } from '@/app/providers/ThemeProvider/ui/ThemeProvider'
 
 interface useThemeReturnType {
   handleThemeSwitch: () => void

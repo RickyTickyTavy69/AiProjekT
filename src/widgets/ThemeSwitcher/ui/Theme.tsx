@@ -1,6 +1,6 @@
 import React, {memo, useEffect} from 'react'
 import { useTheme } from '../index'
-import Icon from 'src/shared/assets/theme-switch.svg?react';
+import Icon from '@/shared/assets/theme-switch.svg?react';
 
 const Theme = memo((): React.ReactNode => {
   const { theme, handleThemeSwitch } = useTheme()
